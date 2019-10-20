@@ -1,0 +1,45 @@
+<div class="container-fluid" style="margin-top: 10px">
+
+    <div class="card-header">
+      <h3>Create</h3>
+    </div>
+  
+    <div clas="card">
+  
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #doctorForm="ngForm">
+  
+          <div class="form-group ">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" #firstname="ngModel" [(ngModel)]="doctor.firstName" name="firstName" class="form-control" required />
+          </div>
+  
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" #lastName="ngModel" required [(ngModel)]="doctor.lastName" name="lastName" class="form-control" />
+          </div>
+  
+          <div class="form-group ">
+            <label for="jobTitle">Job Title</label>
+            <input type="text" id="jobTitle" #jobTitle="ngModel" required [(ngModel)]="doctor.jobTitle" name="jobTitle" class="form-control" />
+          </div>
+  
+          <div class="form-group">
+            <label for="identityNumber">Identity Number</label>
+            <input type="text" id="identityNumber" #identityNumber="ngModel" required [(ngModel)]="doctor.identityNumber" name="identityNumber" class="form-control" />
+          </div>
+
+  
+          <div>
+            <button type="submit" class="btn btn-primary col-sm-12 col-md-2" style="margin-right:5px; margin-bottom: 5px"
+              routerLink="doctors" [disabled]="doctorForm.form.invalid">Save</button>
+  
+  
+            <button (click)="cancel()" class="btn btn-secondary col-sm-12 col-md-2"
+              style="margin-right:5px; margin-bottom: 5px">Cancel</button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>
